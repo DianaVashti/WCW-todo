@@ -58,3 +58,5 @@ typings/
 .env
 
 .git
+
+node_modules
