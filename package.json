@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "db": "createdb todoz; psql todoz < database/schema.sql;"
+    "db": "dropdb todoz; createdb todoz; psql todoz < database/schema.sql; psql todoz < seed.sql"
   },
   "repository": {
     "type": "git",
