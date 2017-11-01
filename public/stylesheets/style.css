@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 25vw;
+  align-items: baseline;
+  justify-content: space-between;
+}
