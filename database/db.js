@@ -3,12 +3,14 @@ const connectionString = process.env.DATABASE_URL || `postgres://${process.env.U
 const pgp = require('pg-promise')();
 const db = pgp( connectionString );
 
-const addTodo = "Insert SQL Statement"
-const completeTodo = "Insert SQL Statement"
-const getAllTodoz = "Insert SQL Statement"
+const addTodo = `INSERT INTO todoz (item) VALUES($1)`
+const completeTodo = `UPDATE todoz SET is_completed = TRUE WHERE id=$1`
+const getAllTodoz = `SELECT * FROM todoz WHERE is_completed=FALSE`
 
 const Querries = {
-  // add methods here
+  add: item => db.none(addTodo, [item]),
+  complete: id => db.none(completeTodo, [id]),
+  getAll: () => db.any(getAllTodoz)
 }
 
 module.exports = { Querries }

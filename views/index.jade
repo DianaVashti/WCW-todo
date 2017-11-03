@@ -1,4 +1,14 @@
 extends layout
 
 block content
-  p make me a todo list
+  form(method='post', action='/add')
+    | Add a todo 
+    br
+    input(type='text', name='item')
+    br
+    input(type='submit', value='Submit')
+  table
+    for todo in todoz 
+      .row
+        p #{todo.item}
+        a.btn(href='/complete/#{todo.id}') complete
