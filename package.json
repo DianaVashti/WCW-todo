@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "db": "dropdb todoz; createdb todoz; psql todoz < database/schema.sql; psql todoz < seed.sql"
+    "start": "nodemon src/bin/www --exec babel-node --presets es2015,stage-2",
+    "db": "dropdb todoz; createdb todoz; psql todoz < src/database/schema.sql; psql todoz < src/database/seed.sql",
+    "test": "mocha --require babel-core/register test/**/*.test.js"
+
   },
   "repository": {
     "type": "git",
@@ -18,14 +20,23 @@
   },
   "homepage": "https://github.com/DianaVashti/WCW-todo#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "debug": "^3.1.0",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "jade": "^1.11.0",
     "morgan": "^1.9.0",
-    "nodemon": "^1.12.1",
     "pg-promise": "^7.2.0",
     "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1"
   }
 }
