@@ -1,5 +1,18 @@
 <% include ../partials/header %>
 
-<!-- insert code here -->
+<!-- add ajax form to create new lists -->
+
+<div class="form">
+  <h3>Hello</h3>
+  <ul>
+    <% userLists.forEach( (list) => { %>
+      <li>
+        <a href='/users/lists/<%= list.id%>'>
+          <%= list.title %>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+</div>
 
 <% include ../partials/footer %>

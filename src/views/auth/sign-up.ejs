@@ -1,9 +1,12 @@
 <% include ../partials/header %>
 
-<form action="/sign-up" method="POST" class='form'>
-  <input name='username' required>Username</input>
-  <input name='password' required>Password</input>
-  <input type='submit'>Submit</input>
-</form>
+<div class='form'>
+  <h1>Sign Up:</h1>
+  <form action="/auth/sign-up" method="POST" class='form'>
+    <input name='username' required>Username</input>
+    <input name='password' required>Password</input>
+    <input type='submit'/>
+  </form>
+</div>
 
 <% include ../partials/footer %>

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "export NODE_ENV=development && nodemon src/bin/www --exec babel-node --presets es2015,stage-2",
-    "db:create": "createdb todoz; psql todoz < src/database/schema.sql;",
-    "db:create_test": "createdb todoz_test;psql todoz_test < src/database/schema.sql;",
+    "db:create": "createdb todoz; psql todoz < src/database/schema.sql; psql todoz < src/database/seed.sql;",
+    "db:create_test": "createdb todoz_test;psql todoz_test < src/database/schema.sql; psql todoz_test < src/database/seed.sql;",
     "db:delete": "deletedb todoz",
     "db:delete_test": "deletedb todoz_test",
     "test": "export NODE_ENV=test && mocha --require babel-core/register test/**/*.test.js"
