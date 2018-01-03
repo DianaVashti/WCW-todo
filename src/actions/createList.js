@@ -1,10 +1,8 @@
 const db = require('../database/db')
 
-const sql = `
-  INSERT INTO list(title)
-  VALUES ($1)
-`
+const sql = `INSERT INTO list(title, user_id)
+             VALUES ($1, $2)`
 
-export default function createList(title){
-  db.none(sql, [title])
+export default function createList(title, userId){
+  return db.none(sql, [title, userId])
 }

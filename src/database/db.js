@@ -10,3 +10,5 @@ if(process.env.NODE_ENV === 'development'){
 
 const pgp = require('pg-promise')();
 const db = pgp( connectionString );
+
+module.exports = db;

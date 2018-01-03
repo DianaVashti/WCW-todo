@@ -1,5 +1,12 @@
 <% include ../partials/header %>
 
-<h1>Sign In</h1>
+<div class='form'>
+  <h1>Sign In:</h1>
+  <form action="/auth/sign-in" method="POST" class='form'>
+    <input name='username' required>Username</input>
+    <input name='password' required>Password</input>
+    <input type='submit'/>
+  </form>
+</div>
 
 <% include ../partials/footer %>
