@@ -2,6 +2,7 @@ var express = require('express');
 
 import auth from './auth'
 import users from './users'
+import ajax from './ajax'
 
 var router = express.Router();
 
@@ -12,5 +13,6 @@ router.get('/', function(req, res, next) {
 
 router.use('/auth', auth)
 router.use('/users', users)
+router.use('/ajax', ajax)
 
 module.exports = router;

@@ -14,6 +14,3 @@
   - password: 123456
 
 ### Specs:
-- [ ] Item is static but onclick becomes input that is in-line editable via ajax
-- [ ] list items can have title and description
-  - [ ] both are in-line editable via ajax
